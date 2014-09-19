@@ -17,9 +17,9 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     // MARK: Constants
     
     private let primaryCharacters = [
-        ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
-        ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
-        ["z", "x", "c", "v", "b", "n", "m"]
+        ["ឆ", "ឹ", "េ", "រ", "ត", "យ", "ុ", "ិ", "ោ", "ផ"],
+        ["ា", "ស", "ដ", "ថ", "ង", "ហ", "្", "ក", "ល"],
+        ["ឋ", "ខ", "ច", "វ", "ប", "ន", "ម"]
     ]
     
     private let suggestionProvider: SuggestionProvider = SuggestionTrie()

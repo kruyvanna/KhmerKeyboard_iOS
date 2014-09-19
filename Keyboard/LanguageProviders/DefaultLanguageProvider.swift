@@ -14,9 +14,9 @@ import Foundation
 class DefaultLanguageProvider: LanguageProvider {
     lazy var language = "Default"
     lazy var secondaryCharacters = [
-        ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"],
-        ["", "", "", "~", "{", "}", "|", "-", "+"],
-        ["", "", "<", ">", "?", ":", "\""]
+        ["ឈ", "ឺ", "ែ", "ឬ", "ទ", "ួ", "ូ", "ី", "ៅ", "ភ"],
+        ["ាំ", "ៃ", "ឌ", "ធ", "អ", "ះ", "ញ", "គ", "ឡ"],
+        ["ឍ", "ឃ", "ជ", "េះ", "ព", "ណ", "ំ"]
     ]
     lazy var tertiaryCharacters = [
         ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
