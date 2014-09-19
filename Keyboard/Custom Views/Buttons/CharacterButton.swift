@@ -82,14 +82,14 @@ class CharacterButton: KeyButton {
         super.init(frame: frame)
         
         self.primaryLabel = UILabel(frame: CGRectMake(frame.width * 0.2, 0.0, frame.width * 0.8, frame.height * 0.95))
-        self.primaryLabel.font = UIFont(name: "HelveticaNeue", size: 18.0)
+        self.primaryLabel.font = UIFont(name: "HelveticaNeue", size: 28.0)
         self.primaryLabel.textColor = UIColor(white: 238.0/255, alpha: 1.0)
         self.primaryLabel.textAlignment = .Left
         self.primaryLabel.text = primaryCharacter
         self.addSubview(self.primaryLabel)
         
         self.secondaryLabel = UILabel(frame: CGRectMake(0.0, 0.0, frame.width * 0.9, frame.height * 0.3))
-        self.secondaryLabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
+        self.secondaryLabel.font = UIFont(name: "HelveticaNeue", size: 20.0)
         self.secondaryLabel.adjustsFontSizeToFitWidth = true
         self.secondaryLabel.textColor = UIColor(white: 187.0/255, alpha: 1.0)
         self.secondaryLabel.textAlignment = .Right
@@ -97,7 +97,7 @@ class CharacterButton: KeyButton {
         self.addSubview(self.secondaryLabel)
         
         self.tertiaryLabel = UILabel(frame: CGRectMake(0.0, frame.height * 0.65, frame.width * 0.9, frame.height * 0.25))
-        self.tertiaryLabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
+        self.tertiaryLabel.font = UIFont(name: "HelveticaNeue", size: 14.0)
         self.tertiaryLabel.textColor = UIColor(white: 187.0/255, alpha: 1.0)
         self.tertiaryLabel.adjustsFontSizeToFitWidth = true
         self.tertiaryLabel.textAlignment = .Right
