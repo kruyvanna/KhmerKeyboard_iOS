@@ -20,10 +20,10 @@ class KeyButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.titleLabel.font = UIFont(name: "HelveticaNeue", size: 18.0)
-        self.titleLabel.textAlignment = .Center
+        self.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 18.0)
+        self.titleLabel?.textAlignment = .Center
         self.setTitleColor(UIColor(white: 238.0/255, alpha: 1.0), forState: UIControlState.Normal)
-        self.titleLabel.sizeToFit()
+        self.titleLabel?.sizeToFit()
         
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
