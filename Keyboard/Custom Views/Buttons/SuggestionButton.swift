@@ -49,9 +49,9 @@ class SuggestionButton: UIButton {
         self.titleLabel?.sizeToFit()
         self.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
     }
-    
-    required init(coder aDecoder: NSCoder!) {
-        fatalError("NSCoding not supported")
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: Event handlers
