@@ -18,7 +18,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     
     private let primaryCharacters = [
         ["ឆ", "ឹ", "េ", "រ", "ត", "យ", "ុ", "ិ", "ោ", "ផ"],
-        ["ា", "ស", "ដ", "ថ", "ង", "ហ", "្", "ក", "ល"],
+        ["ា", "ស", "ដ", "ថ", "ង", "ហ", "្", "ក", "ល", "់"],
         ["ឋ", "ខ", "ច", "វ", "ប", "ន", "ម"]
     ]
     
@@ -135,7 +135,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 12.0/255, green: 12.0/255, blue: 12.0/255, alpha: 1)
+        self.view.backgroundColor = UIColor(red: 209.0/255, green: 213.0/255, blue: 219.0/255, alpha: 1)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -419,19 +419,19 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         currentLanguageLabel.adjustsFontSizeToFitWidth = true
         currentLanguageLabel.textColor = UIColor(white: 187.0/255, alpha: 1)
         currentLanguageLabel.textAlignment = .Center
-        currentLanguageLabel.text = "\(languageProvider.language)"
+        currentLanguageLabel.text = ""
         spaceButton.addSubview(currentLanguageLabel)
         
         let spaceButtonLongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPressForSpaceButtonWithGestureRecognizer:")
         spaceButton.addGestureRecognizer(spaceButtonLongPressGestureRecognizer)
         
-        let spaceButtonSwipeLeftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeLeftForSpaceButtonWithGestureRecognizer:")
-        spaceButtonSwipeLeftGestureRecognizer.direction = .Left
-        spaceButton.addGestureRecognizer(spaceButtonSwipeLeftGestureRecognizer)
-        
-        let spaceButtonSwipeRightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeRightForSpaceButtonWithGestureRecognizer:")
-        spaceButtonSwipeRightGestureRecognizer.direction = .Right
-        spaceButton.addGestureRecognizer(spaceButtonSwipeRightGestureRecognizer)
+//        let spaceButtonSwipeLeftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeLeftForSpaceButtonWithGestureRecognizer:")
+//        spaceButtonSwipeLeftGestureRecognizer.direction = .Left
+//        spaceButton.addGestureRecognizer(spaceButtonSwipeLeftGestureRecognizer)
+//        
+//        let spaceButtonSwipeRightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeRightForSpaceButtonWithGestureRecognizer:")
+//        spaceButtonSwipeRightGestureRecognizer.direction = .Right
+//        spaceButton.addGestureRecognizer(spaceButtonSwipeRightGestureRecognizer)
     }
     
     private func addReturnButton() {
@@ -453,7 +453,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
             var x: CGFloat
             switch rowIndex {
             case 1:
-                x = spacing * 1.5 + keyWidth * 0.5
+                x = spacing
             case 2:
                 x = spacing * 2.5 + keyWidth * 1.5
             default:

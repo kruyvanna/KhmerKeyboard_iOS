@@ -82,27 +82,28 @@ class CharacterButton: KeyButton {
         super.init(frame: frame)
         
         self.primaryLabel = UILabel(frame: CGRectMake(frame.width * 0.2, 0.0, frame.width * 0.8, frame.height * 0.95))
-        self.primaryLabel.font = UIFont(name: "HelveticaNeue", size: 28.0)
-        self.primaryLabel.textColor = UIColor(white: 238.0/255, alpha: 1.0)
+        self.primaryLabel.font = UIFont(name: "HelveticaNeue", size: 16.0)
+        self.primaryLabel.textColor = UIColor(white: 0.0/255, alpha: 1.0)
         self.primaryLabel.textAlignment = .Left
         self.primaryLabel.text = primaryCharacter
+        self.primaryLabel.backgroundColor = UIColor(white: 255.0/255, alpha: 0.0)
         self.addSubview(self.primaryLabel)
         
         self.secondaryLabel = UILabel(frame: CGRectMake(0.0, 0.0, frame.width * 0.9, frame.height * 0.3))
-        self.secondaryLabel.font = UIFont(name: "HelveticaNeue", size: 20.0)
+        self.secondaryLabel.font = UIFont(name: "HelveticaNeue", size: 8.0)
         self.secondaryLabel.adjustsFontSizeToFitWidth = true
-        self.secondaryLabel.textColor = UIColor(white: 187.0/255, alpha: 1.0)
+        self.secondaryLabel.textColor = UIColor(white: 167.0/255, alpha: 1.0)
         self.secondaryLabel.textAlignment = .Right
         self.secondaryLabel.text = secondaryCharacter
         self.addSubview(self.secondaryLabel)
-        
-        self.tertiaryLabel = UILabel(frame: CGRectMake(0.0, frame.height * 0.65, frame.width * 0.9, frame.height * 0.25))
-        self.tertiaryLabel.font = UIFont(name: "HelveticaNeue", size: 14.0)
-        self.tertiaryLabel.textColor = UIColor(white: 187.0/255, alpha: 1.0)
-        self.tertiaryLabel.adjustsFontSizeToFitWidth = true
-        self.tertiaryLabel.textAlignment = .Right
-        self.tertiaryLabel.text = tertiaryCharacter
-        self.addSubview(self.tertiaryLabel)
+//
+//        self.tertiaryLabel = UILabel(frame: CGRectMake(0.0, frame.height * 0.65, frame.width * 0.9, frame.height * 0.25))
+//        self.tertiaryLabel.font = UIFont(name: "HelveticaNeue", size: 8.0)
+//        self.tertiaryLabel.textColor = UIColor(white: 187.0/255, alpha: 1.0)
+//        self.tertiaryLabel.adjustsFontSizeToFitWidth = true
+//        self.tertiaryLabel.textAlignment = .Right
+//        self.tertiaryLabel.text = tertiaryCharacter
+//        self.addSubview(self.tertiaryLabel)
         
         self.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
         

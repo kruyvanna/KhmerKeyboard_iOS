@@ -27,7 +27,7 @@ class KeyButton: UIButton {
         
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
-        let gradientColors: [AnyObject] = [UIColor(red: 80.0/255, green: 80.0/255, blue: 80.0/255, alpha: 1.0).CGColor, UIColor(red: 60.0/255, green: 60.0/255, blue: 60.0/255, alpha: 1.0).CGColor]
+        let gradientColors: [AnyObject] = [UIColor(white: 255.0/255, alpha: 1.0).CGColor, UIColor(white: 255.0/255, alpha: 1.0).CGColor]
         gradient.colors = gradientColors // Declaration broken into two lines to prevent 'unable to bridge to Objective C' error.
         self.setBackgroundImage(gradient.UIImageFromCALayer(), forState: .Normal)
         
