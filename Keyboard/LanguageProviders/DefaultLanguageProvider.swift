@@ -20,13 +20,13 @@ class DefaultLanguageProvider: LanguageProvider {
     ]
     lazy var tertiaryCharacters = [
         ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
-        ["ឦ", "៌", "៍", "៊", "៏", "័", "៎", "ៗ", "%", "ៈ"],
+        ["ឦ", "%", "៌", "៍", "៊", "៏", "័", "៎", "ៗ", "ៈ"],
         ["៛", "(", ")", "ឩ",",", ".", ";"]
     ]
     lazy var shiftCharacters = [
         ["១", "២", "៣", "៤", "៥", "៦", "៧", "៨", "៩", "០"],
-        ["ឥ", "ឱ", "ឪ", "ឯ", "ឮ", "ឰ", "ឧ", "ៀ", "ឿ", "ោះ"],
-        ["@", "ឲ", "៖", "ឫ", "ឭ", "ុះ", "ុំ"]
+        ["ឥ", "ឧ", "ឱ", "ឪ", "ឲ", "ឯ", "ឫ", "ឭ", "ឮ", "ឰ"],
+        ["@", "ៀ", "ឿ", "៖", "ោះ",  "ុះ", "ុំ"]
     ]
     lazy var autocapitalizeAfter = [String]()
     lazy var suggestionDictionary = [ WeightedString(term: "ការងារ", weight: 1),

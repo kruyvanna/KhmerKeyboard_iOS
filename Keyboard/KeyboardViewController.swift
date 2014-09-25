@@ -51,7 +51,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     ]
     private var shiftButton: KeyButton!
     private var deleteButton: KeyButton!
-    private var tabButton: KeyButton!
+    private var altButton: KeyButton!
     private var nextKeyboardButton: KeyButton!
     private var spaceButton: KeyButton!
     private var returnButton: KeyButton!
@@ -116,6 +116,29 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         }
     }
     
+    private enum AltMode {
+        case Off, On
+    }
+    
+    private var altMode: AltMode = .Off {
+        didSet {
+            altButton.selected = (altMode == .On)
+            for row in characterButtons {
+                for characterButton in row {
+                    switch altMode {
+                    case .Off:
+                        characterButton.primaryLabel.text = characterButton.primaryCharacter
+                        characterButton.secondaryLabel.text = characterButton.secondaryCharacter
+                    case .On:
+                        characterButton.primaryLabel.text = characterButton.tertiaryCharacter
+                        characterButton.secondaryLabel.text = ""
+                    }
+                }
+            }
+
+        }
+    }
+    
     // MARK: Constructors
     // FIXME: Uncomment init methods when crash bug is fixed. Also need to move languageProvider initialization to constructor to prevent unnecessary creation of two DefaultLanguageProvider instances.
 //    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -152,11 +175,22 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     // MARK: Event handlers
     
     func shiftButtonPressed(sender: KeyButton) {
+        altMode = .Off
         switch shiftMode {
         case .Off:
             shiftMode = .On
         case .On:
             shiftMode = .Off
+        }
+    }
+    
+    func altButtonPressed(sender: KeyButton) {
+        shiftMode = .Off
+        switch altMode {
+        case .Off:
+            altMode = .On
+        case .On:
+            altMode = .Off
         }
     }
     
@@ -222,12 +256,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     func handleDeleteButtonTimerTick(timer: NSTimer) {
         proxy.deleteBackward()
     }
-    
-    func tabButtonPressed(sender: KeyButton) {
-        for i in 0..<4 { // TODO: Update to use tab setting.
-            proxy.insertText(" ")
-        }
-    }
+
     
     func spaceButtonPressed(sender: KeyButton) {
         for suffix in languageProvider.autocapitalizeAfter {
@@ -359,7 +388,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         addPredictiveTextScrollView()
         addShiftButton()
         addDeleteButton()
-        addTabButton()
+        addAltButton()
         addNextKeyboardButton()
         addSpaceButton()
         addReturnButton()
@@ -394,11 +423,11 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         deleteButton.addGestureRecognizer(deleteButtonSwipeLeftGestureRecognizer)
     }
     
-    private func addTabButton() {
-        tabButton = KeyButton(frame: CGRectMake(spacing, keyHeight * 3.0 + spacing * 4.0 + predictiveTextBoxHeight, keyWidth * 1.5 + spacing * 0.5, keyHeight))
-        tabButton.setTitle("\u{0000005E}", forState: .Normal)
-        tabButton.addTarget(self, action: "tabButtonPressed:", forControlEvents: .TouchUpInside)
-        self.view.addSubview(tabButton)
+    private func addAltButton() {
+        altButton = KeyButton(frame: CGRectMake(spacing, keyHeight * 3.0 + spacing * 4.0 + predictiveTextBoxHeight, keyWidth * 1.5 + spacing * 0.5, keyHeight))
+        altButton.setTitle("\u{0000005E}", forState: .Normal)
+        altButton.addTarget(self, action: "altButtonPressed:", forControlEvents: .TouchUpInside)
+        self.view.addSubview(altButton)
     }
     
     private func addNextKeyboardButton() {
