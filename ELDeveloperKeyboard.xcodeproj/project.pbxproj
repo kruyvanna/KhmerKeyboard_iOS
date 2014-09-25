@@ -31,6 +31,7 @@
 		07D5B820196622350046B202 /* WeightedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D5B81F196622350046B202 /* WeightedString.swift */; };
 		07D7AE90198D9726006200DA /* TouchDelegatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7AE8F198D9726006200DA /* TouchDelegatingView.swift */; };
 		07F6208A1979705D006C4C86 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F620891979705D006C4C86 /* SwipeView.swift */; };
+		0E3A19A919D418BB007286F4 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A19A819D418BB007286F4 /* ControlButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		07D5B81F196622350046B202 /* WeightedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedString.swift; sourceTree = "<group>"; };
 		07D7AE8F198D9726006200DA /* TouchDelegatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDelegatingView.swift; sourceTree = "<group>"; };
 		07F620891979705D006C4C86 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		0E3A19A819D418BB007286F4 /* ControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				076EF5F119650C79009A561C /* KeyButton.swift */,
 				076EF5F319650C90009A561C /* CharacterButton.swift */,
 				072711341967691600A896D1 /* SuggestionButton.swift */,
+				0E3A19A819D418BB007286F4 /* ControlButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				076EF5F019650BFA009A561C /* CircularArray.swift in Sources */,
+				0E3A19A919D418BB007286F4 /* ControlButton.swift in Sources */,
 				076EF5E4196506A6009A561C /* LanguageProvider.swift in Sources */,
 				076EF5F819650F00009A561C /* README.md in Sources */,
 				072711351967691600A896D1 /* SuggestionButton.swift in Sources */,
