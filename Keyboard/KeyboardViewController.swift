@@ -105,8 +105,10 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
                     switch shiftMode {
                     case .Off:
                         characterButton.primaryLabel.text = characterButton.primaryCharacter
+                        characterButton.secondaryLabel.text = characterButton.secondaryCharacter
                     case .On:
                         characterButton.primaryLabel.text = characterButton.shiftCharacter
+                        characterButton.secondaryLabel.text = ""
                     }
                 
                 }
