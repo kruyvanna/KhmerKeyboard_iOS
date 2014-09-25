@@ -287,35 +287,35 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         proxy.insertText(" ")
     }
     
-    func handleSwipeLeftForSpaceButtonWithGestureRecognizer(gestureRecognizer: UISwipeGestureRecognizer) {
-        UIView.animateWithDuration(0.1, animations: {
-            self.moveButtonLabels(-self.keyWidth)
-            }, completion: {
-                (success: Bool) -> Void in
-                self.languageProviders.increment()
-                self.languageProvider = self.languageProviders.currentItem!
-                self.moveButtonLabels(self.keyWidth * 2.0)
-                UIView.animateWithDuration(0.1) {
-                    self.moveButtonLabels(-self.keyWidth)
-                }
-            }
-        )
-    }
-    
-    func handleSwipeRightForSpaceButtonWithGestureRecognizer(gestureRecognizer: UISwipeGestureRecognizer) {
-        UIView.animateWithDuration(0.1, animations: {
-            self.moveButtonLabels(self.keyWidth)
-            }, completion: {
-                (success: Bool) -> Void in
-                self.languageProviders.decrement()
-                self.languageProvider = self.languageProviders.currentItem!
-                self.moveButtonLabels(-self.keyWidth * 2.0)
-                UIView.animateWithDuration(0.1) {
-                    self.moveButtonLabels(self.keyWidth)
-                }
-            }
-        )
-    }
+//    func handleSwipeLeftForSpaceButtonWithGestureRecognizer(gestureRecognizer: UISwipeGestureRecognizer) {
+//        UIView.animateWithDuration(0.1, animations: {
+//            self.moveButtonLabels(-self.keyWidth)
+//            }, completion: {
+//                (success: Bool) -> Void in
+//                self.languageProviders.increment()
+//                self.languageProvider = self.languageProviders.currentItem!
+//                self.moveButtonLabels(self.keyWidth * 2.0)
+//                UIView.animateWithDuration(0.1) {
+//                    self.moveButtonLabels(-self.keyWidth)
+//                }
+//            }
+//        )
+//    }
+//    
+//    func handleSwipeRightForSpaceButtonWithGestureRecognizer(gestureRecognizer: UISwipeGestureRecognizer) {
+//        UIView.animateWithDuration(0.1, animations: {
+//            self.moveButtonLabels(self.keyWidth)
+//            }, completion: {
+//                (success: Bool) -> Void in
+//                self.languageProviders.decrement()
+//                self.languageProvider = self.languageProviders.currentItem!
+//                self.moveButtonLabels(-self.keyWidth * 2.0)
+//                UIView.animateWithDuration(0.1) {
+//                    self.moveButtonLabels(self.keyWidth)
+//                }
+//            }
+//        )
+//    }
     
     func returnButtonPressed(sender: KeyButton) {
         proxy.insertText("\n")
@@ -325,13 +325,17 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     // MARK: CharacterButtonDelegate
     
     func handlePressForButton(button: CharacterButton) {
-        switch shiftMode {
-        case .Off:
-            proxy.insertText(button.primaryCharacter.lowercaseString)
-        case .On:
-            proxy.insertText(button.primaryCharacter.uppercaseString)
-            shiftMode = .Off
+        
+        if shiftMode == .On || altMode == .On {
+            if shiftMode == .On {
+                proxy.insertText(button.shiftCharacter)
+            }else{
+                proxy.insertText(button.tertiaryCharacter)
+            }
+        }else{
+            proxy.insertText(button.primaryCharacter)
         }
+        
         updateSuggestions()
     }
     
