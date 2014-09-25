@@ -29,5 +29,7 @@ class DefaultLanguageProvider: LanguageProvider {
         ["@", "ឲ", "៖", "ឫ", "ឭ", "ុះ", "ុំ"]
     ]
     lazy var autocapitalizeAfter = [String]()
-    lazy var suggestionDictionary = [WeightedString]()
+    lazy var suggestionDictionary = [ WeightedString(term: "ការងារ", weight: 1),
+        WeightedString(term: "ខ្មែរ", weight: 1)
+    ]
 }
