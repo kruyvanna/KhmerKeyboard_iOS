@@ -66,17 +66,20 @@ class CharacterButton: KeyButton {
         }
     }
     
+    var shiftCharacter = ""
+    
     private(set) var primaryLabel: UILabel!
     private(set) var secondaryLabel: UILabel!
     private(set) var tertiaryLabel: UILabel!
     
     // MARK: Constructors
     
-    init(frame: CGRect, primaryCharacter: String, secondaryCharacter: String, tertiaryCharacter: String, delegate: CharacterButtonDelegate?) {
+    init(frame: CGRect, primaryCharacter: String, secondaryCharacter: String, tertiaryCharacter: String, shiftCharacter: String, delegate: CharacterButtonDelegate?) {
         
         self.primaryCharacter = primaryCharacter
         self.secondaryCharacter = secondaryCharacter
         self.tertiaryCharacter = tertiaryCharacter
+        self.shiftCharacter = shiftCharacter
         self.delegate = delegate
         
         super.init(frame: frame)

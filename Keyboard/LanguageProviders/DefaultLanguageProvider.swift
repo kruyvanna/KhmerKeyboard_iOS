@@ -23,6 +23,11 @@ class DefaultLanguageProvider: LanguageProvider {
         ["", "", "", "`", "[", "]", "\\", "_", "=", ""],
         ["", "", ",", ".", "/", ";", "'"]
     ]
+    lazy var shiftCharacters = [
+        ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+        ["ាំ", "ៃ", "ឌ", "", "អ", "ះ", "ញ", "គ", "ឡ", "៉"],
+        ["ឍ", "ឃ", "ជ", "េះ", "ព", "ណ", "ំ"]
+    ]
     lazy var autocapitalizeAfter = [String]()
     lazy var suggestionDictionary = [WeightedString]()
 }

@@ -24,7 +24,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     
     private let suggestionProvider: SuggestionProvider = SuggestionTrie()
     
-    private let languageProviders = CircularArray(items: [DefaultLanguageProvider(), SwiftLanguageProvider()] as [LanguageProvider])
+    private let languageProviders = CircularArray(items: [DefaultLanguageProvider()] as [LanguageProvider])
     
     private let spacing: CGFloat = 4.0
     private let predictiveTextBoxHeight: CGFloat = 24.0
@@ -94,19 +94,19 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     }
 
     private enum ShiftMode {
-        case Off, On, Caps
+        case Off, On
     }
     
     private var shiftMode: ShiftMode = .Off {
         didSet {
-            shiftButton.selected = (shiftMode == .Caps)
+            shiftButton.selected = (shiftMode == .On)
             for row in characterButtons {
                 for characterButton in row {
                     switch shiftMode {
                     case .Off:
-                        characterButton.primaryLabel.text = characterButton.primaryCharacter.lowercaseString
-                    case .On, .Caps:
-                        characterButton.primaryLabel.text = characterButton.primaryCharacter.uppercaseString
+                        characterButton.primaryLabel.text = characterButton.primaryCharacter
+                    case .On:
+                        characterButton.primaryLabel.text = characterButton.shiftCharacter
                     }
                 
                 }
@@ -154,8 +154,6 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         case .Off:
             shiftMode = .On
         case .On:
-            shiftMode = .Caps
-        case .Caps:
             shiftMode = .Off
         }
     }
@@ -302,8 +300,6 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         case .On:
             proxy.insertText(button.primaryCharacter.uppercaseString)
             shiftMode = .Off
-        case .Caps:
-            proxy.insertText(button.primaryCharacter.uppercaseString)
         }
         updateSuggestions()
     }
@@ -368,6 +364,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         addCharacterButtons()
         addSwipeView()
     }
+    
     
     private func addPredictiveTextScrollView() {
         predictiveTextScrollView = PredictiveTextScrollView(frame: CGRectMake(0.0, 0.0, self.view.frame.width, predictiveTextBoxHeight))
@@ -461,7 +458,8 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
             }
             for (keyIndex, key) in enumerate(row) {
 //                let characterButton = CharacterButton(frame: CGRectMake(x, y, keyWidth, keyHeight), primaryCharacter: key, secondaryCharacter: "", tertiaryCharacter: "", delegate: self)
-                let characterButton = CharacterButton(frame: CGRectMake(x, y, keyWidth, keyHeight), primaryCharacter: key, secondaryCharacter: languageProvider.secondaryCharacters[rowIndex][keyIndex], tertiaryCharacter: languageProvider.tertiaryCharacters[rowIndex][keyIndex], delegate: self)
+                let characterButton = CharacterButton(frame: CGRectMake(x, y, keyWidth, keyHeight), primaryCharacter: key,
+                    secondaryCharacter: languageProvider.secondaryCharacters[rowIndex][keyIndex], tertiaryCharacter: languageProvider.tertiaryCharacters[rowIndex][keyIndex], shiftCharacter: languageProvider.shiftCharacters[rowIndex][keyIndex], delegate: self)
                 self.view.addSubview(characterButton)
                 characterButtons[rowIndex].append(characterButton)
                 x += keyWidth + spacing

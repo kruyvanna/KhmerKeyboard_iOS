@@ -21,6 +21,9 @@ protocol LanguageProvider {
     /** An array of String arrays, defining the keyboard's tertiary characters. */
     var tertiaryCharacters: [[String]] { get }
     
+    /** An array of String arrays, defining the keyboard's shift characters. */
+    var shiftCharacters: [[String]] { get }
+    
     /** An array of words that usually precede a capitalized word. */
     var autocapitalizeAfter: [String] { get }
     
