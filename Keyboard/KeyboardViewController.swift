@@ -375,7 +375,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     
     private func addShiftButton() {
         shiftButton = KeyButton(frame: CGRectMake(spacing, keyHeight * 2.0 + spacing * 3.0 + predictiveTextBoxHeight, keyWidth * 1.5 + spacing * 0.5, keyHeight))
-        shiftButton.setTitle("\u{000021E7}", forState: .Normal)
+        shiftButton.setTitle("\u{000021EA}", forState: .Normal)
         shiftButton.addTarget(self, action: "shiftButtonPressed:", forControlEvents: .TouchUpInside)
         self.view.addSubview(shiftButton)
     }
@@ -396,7 +396,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     
     private func addTabButton() {
         tabButton = KeyButton(frame: CGRectMake(spacing, keyHeight * 3.0 + spacing * 4.0 + predictiveTextBoxHeight, keyWidth * 1.5 + spacing * 0.5, keyHeight))
-        tabButton.setTitle("tab", forState: .Normal)
+        tabButton.setTitle("\u{0000005E}", forState: .Normal)
         tabButton.addTarget(self, action: "tabButtonPressed:", forControlEvents: .TouchUpInside)
         self.view.addSubview(tabButton)
     }
