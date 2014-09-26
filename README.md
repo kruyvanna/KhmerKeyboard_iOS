@@ -16,3 +16,4 @@ Todo
 -------------
 
 * Rearrange shift mode layout and alt mode layout so that most frequent characters are placed in shift mode layout
+* Add shadow to pop up button
