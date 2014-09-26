@@ -11,9 +11,11 @@ Features
 ## Screenshots
 
 ![alt text](iOS\ Simulator\ Screenshot.png?raw=true "Screenshot")
+![alt text](iOS\ Simulator\ Screenshot1.png?raw=true "Screenshot")
 
 Todo
 -------------
 
 * Rearrange shift mode layout and alt mode layout so that most frequent characters are placed in shift mode layout
 * Add shadow to pop up button
+* Change the globe button icon from blue to black
