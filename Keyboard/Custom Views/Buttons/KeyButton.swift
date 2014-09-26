@@ -31,8 +31,6 @@ class KeyButton: UIButton {
         var grayImage = imageFromColor(UIColor.grayColor())
         self.setBackgroundImage(grayImage, forState: .Selected)
         
-        var im = UIImage()
-        
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 3.0
         self.layer.borderColor = UIColor.whiteColor().CGColor
