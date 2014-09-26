@@ -25,7 +25,7 @@ protocol CharacterButtonDelegate { // FIXME: Need to change this to CharacterBut
      
         :param: button The CharacterButton that was up-swiped.
     */
-    func handleSwipeUpForButton(button: CharacterButton)
+    func handleSwipeUpForButton(button: CharacterButton, recognizer: UIPanGestureRecognizer)
     
     /**
         Respond to the CharacterButton being down-swiped.
@@ -110,8 +110,8 @@ class CharacterButton: KeyButton {
         
         self.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
         
-        let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "buttonSwipedUp:")
-        swipeUpGestureRecognizer.direction = .Up
+        let swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: "buttonSwipedUp:")
+//        swipeUpGestureRecognizer.direction = .Up
         self.addGestureRecognizer(swipeUpGestureRecognizer)
         
         let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "buttonSwipedDown:")
@@ -129,8 +129,8 @@ class CharacterButton: KeyButton {
         delegate?.handlePressForButton(self)
     }
     
-    func buttonSwipedUp(swipeUpGestureRecognizer: UISwipeGestureRecognizer) {
-        delegate?.handleSwipeUpForButton(self)
+    func buttonSwipedUp(swipeUpGestureRecognizer: UIPanGestureRecognizer) {
+        delegate?.handleSwipeUpForButton(self, recognizer: swipeUpGestureRecognizer)
     }
     
     func buttonSwipedDown(swipeDownGestureRecognizer: UISwipeGestureRecognizer) {
