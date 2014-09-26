@@ -468,14 +468,6 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         
         let spaceButtonLongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPressForSpaceButtonWithGestureRecognizer:")
         spaceButton.addGestureRecognizer(spaceButtonLongPressGestureRecognizer)
-        
-//        let spaceButtonSwipeLeftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeLeftForSpaceButtonWithGestureRecognizer:")
-//        spaceButtonSwipeLeftGestureRecognizer.direction = .Left
-//        spaceButton.addGestureRecognizer(spaceButtonSwipeLeftGestureRecognizer)
-//        
-//        let spaceButtonSwipeRightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeRightForSpaceButtonWithGestureRecognizer:")
-//        spaceButtonSwipeRightGestureRecognizer.direction = .Right
-//        spaceButton.addGestureRecognizer(spaceButtonSwipeRightGestureRecognizer)
     }
     
     private func addReturnButton() {
@@ -506,7 +498,6 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
                 x = spacing
             }
             for (keyIndex, key) in enumerate(row) {
-//                let characterButton = CharacterButton(frame: CGRectMake(x, y, keyWidth, keyHeight), primaryCharacter: key, secondaryCharacter: "", tertiaryCharacter: "", delegate: self)
                 let characterButton = CharacterButton(frame: CGRectMake(x, y, keyWidth, keyHeight), primaryCharacter: key,
                     secondaryCharacter: languageProvider.secondaryCharacters[rowIndex][keyIndex], tertiaryCharacter: languageProvider.tertiaryCharacters[rowIndex][keyIndex], shiftCharacter: languageProvider.shiftCharacters[rowIndex][keyIndex], delegate: self)
                 self.view.addSubview(characterButton)
