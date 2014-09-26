@@ -10,8 +10,8 @@ Features
 
 ## Screenshots
 
-<img src="Screenshot.png" width="300">
-<img src="Screenshot1.png" width="300">
+<img src="Screenshot.png" width="300" style="margin-right: 20px; border: solid 1px #C8C6C6;">
+<img src="Screenshot1.png" width="300" style="border: solid 1px #C8C6C6;">
 
 Todo
 -------------
