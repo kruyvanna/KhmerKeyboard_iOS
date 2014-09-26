@@ -141,7 +141,7 @@
 		076EF57F19650431009A561C = {
 			isa = PBXGroup;
 			children = (
-				076EF58A19650431009A561C /* ELDeveloperKeyboard */,
+				076EF58A19650431009A561C /* KhmerKeyboard */,
 				076EF5D51965061C009A561C /* Keyboard */,
 				076EF58919650431009A561C /* Products */,
 				076EF5F719650F00009A561C /* README.md */,
@@ -159,7 +159,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		076EF58A19650431009A561C /* ELDeveloperKeyboard */ = {
+		076EF58A19650431009A561C /* KhmerKeyboard */ = {
 			isa = PBXGroup;
 			children = (
 				076EF58D19650431009A561C /* AppDelegate.swift */,
@@ -167,6 +167,7 @@
 				076EF58F19650431009A561C /* Images.xcassets */,
 				076EF58B19650431009A561C /* Supporting Files */,
 			);
+			name = KhmerKeyboard;
 			path = ELDeveloperKeyboard;
 			sourceTree = "<group>";
 		};
