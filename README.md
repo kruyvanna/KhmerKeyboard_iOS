@@ -10,7 +10,8 @@ Features
 
 ## Screenshots
 
-<img src="Screenshot.png" width="250">
+<img src="Screenshot.png" width="300">
+<img src="Screenshot1.png" width="300">
 
 Todo
 -------------
