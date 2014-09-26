@@ -10,7 +10,7 @@ Features
 
 ## Screenshots
 
-<img src="iOS\ Simulator\ Screenshot.png" width="250">
+<img src="Screenshot.png" width="250">
 
 Todo
 -------------
