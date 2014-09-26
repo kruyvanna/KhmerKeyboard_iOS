@@ -25,24 +25,35 @@ class KeyButton: UIButton {
         self.setTitleColor(UIColor(white: 50.0/255, alpha: 1.0), forState: UIControlState.Normal)
         self.titleLabel?.sizeToFit()
         
-        let gradient = CAGradientLayer()
-        gradient.frame = self.bounds
-        let gradientColors: [AnyObject] = [UIColor.whiteColor().CGColor, UIColor.whiteColor().CGColor]
-        gradient.colors = gradientColors // Declaration broken into two lines to prevent 'unable to bridge to Objective C' error.
-        self.setBackgroundImage(gradient.UIImageFromCALayer(), forState: .Normal)
+        var whiteImage = imageFromColor(UIColor.whiteColor())
+        self.setBackgroundImage(whiteImage, forState: .Normal)
         
-        let selectedGradient = CAGradientLayer()
-        selectedGradient.frame = self.bounds
-        let selectedGradientColors: [AnyObject] = [UIColor.grayColor().CGColor, UIColor.grayColor().CGColor]
-        selectedGradient.colors = selectedGradientColors // Declaration broken into two lines to prevent 'unable to bridge to Objective C' error.
-        self.setBackgroundImage(selectedGradient.UIImageFromCALayer(), forState: .Selected)
+        var grayImage = imageFromColor(UIColor.grayColor())
+        self.setBackgroundImage(grayImage, forState: .Selected)
+        
+        var im = UIImage()
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 3.0
+        self.layer.borderColor = UIColor.whiteColor().CGColor
         
         self.contentVerticalAlignment = .Center
         self.contentHorizontalAlignment = .Center
         self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 1, bottom: 0, right: 0)
+    }
+    
+    func imageFromColor(color: UIColor) -> UIImage {
+        var rect = CGRectMake(0.0, 0.0, 1.0, 1.0)
+        UIGraphicsBeginImageContext(rect.size);
+        var context = UIGraphicsGetCurrentContext();
+        
+        CGContextSetFillColorWithColor(context, color.CGColor);
+        CGContextFillRect(context, rect);
+        
+        var image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return image
     }
     
     required init(coder aDecoder: NSCoder) {

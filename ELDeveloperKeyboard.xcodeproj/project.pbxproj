@@ -32,6 +32,7 @@
 		07D7AE90198D9726006200DA /* TouchDelegatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7AE8F198D9726006200DA /* TouchDelegatingView.swift */; };
 		07F6208A1979705D006C4C86 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F620891979705D006C4C86 /* SwipeView.swift */; };
 		0E3A19A919D418BB007286F4 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A19A819D418BB007286F4 /* ControlButton.swift */; };
+		0E3A19B519D5575C007286F4 /* popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E3A19B419D5575C007286F4 /* popup.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		07D7AE8F198D9726006200DA /* TouchDelegatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDelegatingView.swift; sourceTree = "<group>"; };
 		07F620891979705D006C4C86 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		0E3A19A819D418BB007286F4 /* ControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
+		0E3A19B419D5575C007286F4 /* popup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		076EF5D61965061C009A561C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0E3A19B419D5575C007286F4 /* popup.png */,
 				076EF5D71965061C009A561C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -326,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3A19B519D5575C007286F4 /* popup.png in Resources */,
 				076EF5F619650D65009A561C /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

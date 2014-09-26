@@ -99,20 +99,11 @@ class CharacterButton: KeyButton {
         self.secondaryLabel.textAlignment = .Right
         self.secondaryLabel.text = secondaryCharacter
         self.addSubview(self.secondaryLabel)
-//
-//        self.tertiaryLabel = UILabel(frame: CGRectMake(0.0, frame.height * 0.65, frame.width * 0.9, frame.height * 0.25))
-//        self.tertiaryLabel.font = UIFont(name: "HelveticaNeue", size: 8.0)
-//        self.tertiaryLabel.textColor = UIColor(white: 187.0/255, alpha: 1.0)
-//        self.tertiaryLabel.adjustsFontSizeToFitWidth = true
-//        self.tertiaryLabel.textAlignment = .Right
-//        self.tertiaryLabel.text = tertiaryCharacter
-//        self.addSubview(self.tertiaryLabel)
         
         self.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
         
-        let swipeUpGestureRecognizer = UIPanGestureRecognizer(target: self, action: "buttonSwipedUp:")
-//        swipeUpGestureRecognizer.direction = .Up
-        self.addGestureRecognizer(swipeUpGestureRecognizer)
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "buttonSwipedUp:")
+        self.addGestureRecognizer(panGestureRecognizer)
         
         let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "buttonSwipedDown:")
         swipeDownGestureRecognizer.direction = .Down

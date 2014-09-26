@@ -56,7 +56,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     private var spaceButton: KeyButton!
     private var returnButton: KeyButton!
     private var currentLanguageLabel: UILabel!
-    private var swipeButton: KeyButton!
+    private var popupButton: UIButton!
     
 
     // MARK: Timers
@@ -295,36 +295,6 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         proxy.insertText(" ")
     }
     
-//    func handleSwipeLeftForSpaceButtonWithGestureRecognizer(gestureRecognizer: UISwipeGestureRecognizer) {
-//        UIView.animateWithDuration(0.1, animations: {
-//            self.moveButtonLabels(-self.keyWidth)
-//            }, completion: {
-//                (success: Bool) -> Void in
-//                self.languageProviders.increment()
-//                self.languageProvider = self.languageProviders.currentItem!
-//                self.moveButtonLabels(self.keyWidth * 2.0)
-//                UIView.animateWithDuration(0.1) {
-//                    self.moveButtonLabels(-self.keyWidth)
-//                }
-//            }
-//        )
-//    }
-//    
-//    func handleSwipeRightForSpaceButtonWithGestureRecognizer(gestureRecognizer: UISwipeGestureRecognizer) {
-//        UIView.animateWithDuration(0.1, animations: {
-//            self.moveButtonLabels(self.keyWidth)
-//            }, completion: {
-//                (success: Bool) -> Void in
-//                self.languageProviders.decrement()
-//                self.languageProvider = self.languageProviders.currentItem!
-//                self.moveButtonLabels(-self.keyWidth * 2.0)
-//                UIView.animateWithDuration(0.1) {
-//                    self.moveButtonLabels(self.keyWidth)
-//                }
-//            }
-//        )
-//    }
-    
     func returnButtonPressed(sender: KeyButton) {
         proxy.insertText("\n")
         updateSuggestions()
@@ -348,6 +318,10 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     }
     
     func handleSwipeUpForButton(button: CharacterButton, recognizer: UIPanGestureRecognizer) {
+        if shiftMode == .On || altMode == .On {
+            return
+        }
+        
         if(recognizer.state == .Began){
             var translation = recognizer.translationInView(button)
             if(translation.x == 0 && translation.y < 0){
@@ -361,33 +335,28 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
                 proxy.insertText(button.secondaryCharacter)
                 updateSuggestions()
             }
-            if(swipeButton != nil){
+            if(popupButton != nil){
                 hideSwipeButton()
             }
         }
     }
     
     private func showSwipeCharacter(button: CharacterButton){
-        
         var w = button.frame.width
         var h = button.frame.height
         var x = button.frame.origin.x
         var y = button.frame.origin.y - h
-
-        println(button.frame)
         
-        swipeButton = ControlButton(frame: CGRectMake(x, y, w, h))
-        swipeButton.setTitle(button.secondaryCharacter, forState: .Normal)
-        self.view.addSubview(swipeButton)
-        
-        swipeButton.addTarget(self, action: "hideSwipeButton", forControlEvents: .TouchUpInside)
-        
-//        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("hideSwipeButton"), userInfo: nil, repeats: false)
+        popupButton = UIButton(frame: CGRectMake(x, y, w, h));
+        var image = UIImage(named: "popup")
+        popupButton.setBackgroundImage(image, forState: .Normal);
+        popupButton.setTitle(button.secondaryCharacter, forState: .Normal)
+        self.view.addSubview(popupButton)
     }
     
     func hideSwipeButton(){
-        swipeButton.removeFromSuperview()
-        swipeButton = nil;
+        popupButton.removeFromSuperview()
+        popupButton = nil;
     }
     
     func handleSwipeDownForButton(button: CharacterButton) {
