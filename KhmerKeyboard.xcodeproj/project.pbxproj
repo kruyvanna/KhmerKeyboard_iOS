@@ -71,10 +71,10 @@
 		0727113819684B4700A896D1 /* PredictiveTextScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictiveTextScrollView.swift; sourceTree = "<group>"; };
 		074DC959197ACA22000B913B /* CGPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		076EF58819650431009A561C /* KhmerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhmerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		076EF58C19650431009A561C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		076EF58D19650431009A561C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		076EF58F19650431009A561C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		076EF5A91965046D009A561C /* ELViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELViewController.swift; sourceTree = "<group>"; };
+		076EF58C19650431009A561C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../KhmerKeyboardApp/Info.plist; sourceTree = "<group>"; };
+		076EF58D19650431009A561C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../KhmerKeyboardApp/AppDelegate.swift; sourceTree = "<group>"; };
+		076EF58F19650431009A561C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../KhmerKeyboardApp/Images.xcassets; sourceTree = "<group>"; };
+		076EF5A91965046D009A561C /* ELViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ELViewController.swift; path = ../KhmerKeyboardApp/ELViewController.swift; sourceTree = "<group>"; };
 		076EF5D41965061C009A561C /* Eric-Lin.KhmerKeyboard.Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Eric-Lin.KhmerKeyboard.Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076EF5D71965061C009A561C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076EF5D81965061C009A561C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		076EF57F19650431009A561C = {
 			isa = PBXGroup;
 			children = (
-				076EF58A19650431009A561C /* KhmerKeyboard */,
+				076EF58A19650431009A561C /* KhmerKeyboardApp */,
 				076EF5D51965061C009A561C /* Keyboard */,
 				076EF58919650431009A561C /* Products */,
 				076EF5F719650F00009A561C /* README.md */,
@@ -159,7 +159,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		076EF58A19650431009A561C /* KhmerKeyboard */ = {
+		076EF58A19650431009A561C /* KhmerKeyboardApp */ = {
 			isa = PBXGroup;
 			children = (
 				076EF58D19650431009A561C /* AppDelegate.swift */,
@@ -167,7 +167,7 @@
 				076EF58F19650431009A561C /* Images.xcassets */,
 				076EF58B19650431009A561C /* Supporting Files */,
 			);
-			name = KhmerKeyboard;
+			name = KhmerKeyboardApp;
 			path = ELDeveloperKeyboard;
 			sourceTree = "<group>";
 		};
@@ -473,7 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = ELDeveloperKeyboard/Info.plist;
+				INFOPLIST_FILE = KhmerKeyboardApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = KhmerKeyboard;
 			};
@@ -484,7 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = ELDeveloperKeyboard/Info.plist;
+				INFOPLIST_FILE = KhmerKeyboardApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = KhmerKeyboard;
 			};
