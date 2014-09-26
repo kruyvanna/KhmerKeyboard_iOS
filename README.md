@@ -10,8 +10,8 @@ Features
 
 ## Screenshots
 
-![alt text](iOS\ Simulator\ Screenshot.png?raw=true "Screenshot")
-![alt text](iOS\ Simulator\ Screenshot1.png?raw=true "Screenshot")
+![](iOS\ Simulator\ Screenshot.png =250x)
+![](iOS\ Simulator\ Screenshot1.png =250x)
 
 Todo
 -------------
