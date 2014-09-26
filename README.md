@@ -10,8 +10,7 @@ Features
 
 ## Screenshots
 
-![](iOS\ Simulator\ Screenshot.png =250x)
-![](iOS\ Simulator\ Screenshot1.png =250x)
+<img src="iOS\ Simulator\ Screenshot.png" width="250">
 
 Todo
 -------------
