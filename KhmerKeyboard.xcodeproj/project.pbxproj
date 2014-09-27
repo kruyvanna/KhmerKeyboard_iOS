@@ -72,9 +72,9 @@
 		074DC959197ACA22000B913B /* CGPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		076EF58819650431009A561C /* KhmerKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhmerKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076EF58C19650431009A561C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../KhmerKeyboardApp/Info.plist; sourceTree = "<group>"; };
-		076EF58D19650431009A561C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../KhmerKeyboardApp/AppDelegate.swift; sourceTree = "<group>"; };
+		076EF58D19650431009A561C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076EF58F19650431009A561C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../KhmerKeyboardApp/Images.xcassets; sourceTree = "<group>"; };
-		076EF5A91965046D009A561C /* ELViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ELViewController.swift; path = ../KhmerKeyboardApp/ELViewController.swift; sourceTree = "<group>"; };
+		076EF5A91965046D009A561C /* ELViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELViewController.swift; sourceTree = "<group>"; };
 		076EF5D41965061C009A561C /* Eric-Lin.KhmerKeyboard.Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Eric-Lin.KhmerKeyboard.Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		076EF5D71965061C009A561C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076EF5D81965061C009A561C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
@@ -167,8 +167,7 @@
 				076EF58F19650431009A561C /* Images.xcassets */,
 				076EF58B19650431009A561C /* Supporting Files */,
 			);
-			name = KhmerKeyboardApp;
-			path = ELDeveloperKeyboard;
+			path = KhmerKeyboardApp;
 			sourceTree = "<group>";
 		};
 		076EF58B19650431009A561C /* Supporting Files */ = {
