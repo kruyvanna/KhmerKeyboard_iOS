@@ -27,7 +27,7 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     private let languageProviders = CircularArray(items: [DefaultLanguageProvider()] as [LanguageProvider])
     
     private let spacing: CGFloat = 4.0
-    private let predictiveTextBoxHeight: CGFloat = 24.0
+    private let predictiveTextBoxHeight: CGFloat = 38.0
     private var predictiveTextButtonWidth: CGFloat {
         return (self.view.frame.width - 4 * spacing) / 3.0
     }
@@ -164,11 +164,11 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     override func loadView() {
         let screenRect = UIScreen.mainScreen().bounds
         self.view = TouchForwardingView(frame: CGRectMake(0.0, predictiveTextBoxHeight, screenRect.width, screenRect.height - predictiveTextBoxHeight), delegate: self)
+        self.view.backgroundColor = UIColor(red: 209.0/255, green: 213.0/255, blue: 219.0/255, alpha: 1)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 209.0/255, green: 213.0/255, blue: 219.0/255, alpha: 1)
     }
     
     override func viewDidAppear(animated: Bool) {
