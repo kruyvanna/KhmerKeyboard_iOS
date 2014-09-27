@@ -20,6 +20,7 @@ class PopupButton: UIButton {
         self.layer.shadowRadius = 7
         self.layer.shadowOffset = CGSizeMake(-2, 0)
         self.layer.masksToBounds = false
+        self.contentEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 10.0, 0.0)
     }
 
     required init(coder aDecoder: NSCoder) {
