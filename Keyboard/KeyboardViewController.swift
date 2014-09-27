@@ -169,6 +169,8 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        suggestionProvider.clear()
+        suggestionProvider.loadWeightedStrings(languageProvider.suggestionDictionary)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -368,11 +370,14 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
     // MARK: SuggestionButtonDelegate
     
     func handlePressForButton(button: SuggestionButton) {
-        if let lastWord = lastWordTyped {
-            for letter in lastWord {
+        if let lastWord = NSString.stringWithString(lastWordTyped!) {
+            var count = lastWord.length
+            while count > 0 {
                 proxy.deleteBackward()
+                count--
             }
-            proxy.insertText(button.title + " ")
+
+            proxy.insertText(button.title + "​")
             for suggestionButton in suggestionButtons {
                 suggestionButton.removeFromSuperview()
             }

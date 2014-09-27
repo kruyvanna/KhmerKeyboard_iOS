@@ -44,8 +44,8 @@ class SuggestionButton: UIButton {
         self.setTitle(title, forState: .Normal)
         self.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 18.0)
         self.titleLabel?.textAlignment = .Center
-        self.setTitleColor(UIColor(white: 238.0/255, alpha: 1), forState: .Normal)
-        self.setTitleColor(UIColor(red: 119.0/255, green: 198.0/255, blue: 237.0/255, alpha: 1.0), forState: .Highlighted)
+        self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.setTitleColor(UIColor.blackColor(), forState: .Highlighted)
         self.titleLabel?.sizeToFit()
         self.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
     }
