@@ -32,6 +32,7 @@
 		07F6208A1979705D006C4C86 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F620891979705D006C4C86 /* SwipeView.swift */; };
 		0E3A19A919D418BB007286F4 /* ControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A19A819D418BB007286F4 /* ControlButton.swift */; };
 		0E3A19B519D5575C007286F4 /* popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E3A19B419D5575C007286F4 /* popup.png */; };
+		0E3A19B719D65A2D007286F4 /* PopupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A19B619D65A2D007286F4 /* PopupButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		07F620891979705D006C4C86 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		0E3A19A819D418BB007286F4 /* ControlButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlButton.swift; sourceTree = "<group>"; };
 		0E3A19B419D5575C007286F4 /* popup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup.png; sourceTree = "<group>"; };
+		0E3A19B619D65A2D007286F4 /* PopupButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				076EF5F319650C90009A561C /* CharacterButton.swift */,
 				072711341967691600A896D1 /* SuggestionButton.swift */,
 				0E3A19A819D418BB007286F4 /* ControlButton.swift */,
+				0E3A19B619D65A2D007286F4 /* PopupButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				076EF5EB19650B93009A561C /* StringSubscripts.swift in Sources */,
 				076EF5E6196506F0009A561C /* DefaultLanguageProvider.swift in Sources */,
 				0727113919684B4700A896D1 /* PredictiveTextScrollView.swift in Sources */,
+				0E3A19B719D65A2D007286F4 /* PopupButton.swift in Sources */,
 				076EF5ED19650BD3009A561C /* UIImageFromCALayer.swift in Sources */,
 				074DC95A197ACA22000B913B /* CGPointExtensions.swift in Sources */,
 				07D7AE90198D9726006200DA /* TouchDelegatingView.swift in Sources */,

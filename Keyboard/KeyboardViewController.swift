@@ -347,15 +347,8 @@ class KeyboardViewController: UIInputViewController, CharacterButtonDelegate, Su
         var x = button.frame.origin.x
         var y = button.frame.origin.y - h
         
-        popupButton = UIButton(frame: CGRectMake(x, y, w, h));
-        var image = UIImage(named: "popup")
-        popupButton.setBackgroundImage(image, forState: .Normal);
+        popupButton = PopupButton(frame: CGRectMake(x, y, w, h));
         popupButton.setTitle(button.secondaryCharacter, forState: .Normal)
-        popupButton.layer.shadowColor = UIColor.blackColor().CGColor
-        popupButton.layer.shadowOpacity = 1
-        popupButton.layer.shadowRadius = 7
-        popupButton.layer.shadowOffset = CGSizeMake(-2, 0)
-        popupButton.layer.masksToBounds = false
         self.view.addSubview(popupButton)
     }
     
